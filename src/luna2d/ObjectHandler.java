@@ -14,7 +14,7 @@ import luna2d.renderables.Sprite;
 import luna2d.ui.UI;
 import luna2d.MapGrounds;
 import luna2d.WorldPosition;
-import theHunter.scenes.WorldPlayer;
+import luna2d.templates.WorldPlayer;
 
 public class ObjectHandler 
 {	

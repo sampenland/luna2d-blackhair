@@ -50,14 +50,14 @@ public class WorldPlayer extends Scene
 		
 		WorldPosition pWP = this.worldData.getPlayerWorldPosition();
 		
-		String pathBase = TheHunter.GAME_SAVE_DIR + "/" + gameName + "/";
+		String pathBase = Game.GAME_SAVE_DIR + "/" + gameName + "/";
 		
 		if(Utilites.directoryExists(pathBase))
 		{
-			MapStruct[][] worldMaps = new MapStruct[TheHunter.ROWS][TheHunter.COLUMNS];
-			for (int r = 0; r < TheHunter.ROWS; r++)
+			MapStruct[][] worldMaps = new MapStruct[Game.ROWS][Game.COLUMNS];
+			for (int r = 0; r < Game.ROWS; r++)
 			{
-				for (int c = 0; c < TheHunter.COLUMNS; c++)
+				for (int c = 0; c < Game.COLUMNS; c++)
 				{
 					worldMaps[r][c] = this.loadMap(gameName, r, c);
 					
@@ -83,7 +83,7 @@ public class WorldPlayer extends Scene
 	
 	private boolean loadGameFile(String gameName)
 	{
-		String path = TheHunter.GAME_SAVE_DIR + "/" + gameName + "/" + gameName + ".thdat";
+		String path = Game.GAME_SAVE_DIR + "/" + gameName + "/" + gameName + ".thdat";
 				
 		BufferedReader reader;
 		try 
@@ -128,16 +128,16 @@ public class WorldPlayer extends Scene
 	{
 		String mapName = gameName + "_" + worldRow + "-" +  worldColumn;
 		
-		String pathBase = TheHunter.GAME_SAVE_DIR + "/" + gameName + "/";
+		String pathBase = Game.GAME_SAVE_DIR + "/" + gameName + "/";
 		String mapPath = pathBase + "s_" + gameName + "_" + worldRow + "-" +  worldColumn + ".ths";
 		String groundPath = pathBase + "s_" + gameName + "_" + worldRow + "-" +  worldColumn + ".thsg";
 
-		int[][] mapData = TheHunter.loadCSVints(mapPath, LoadDataType.GAME_MAP);
-		int[][] mapGrounds = TheHunter.loadCSVints(groundPath, LoadDataType.GAME_GROUNDS);
+		int[][] mapData = Game.loadCSVints(mapPath, LoadDataType.GAME_MAP);
+		int[][] mapGrounds = Game.loadCSVints(groundPath, LoadDataType.GAME_GROUNDS);
 		
-		for (int r = 0; r < TheHunter.ROWS; r++)
+		for (int r = 0; r < Game.ROWS; r++)
 		{
-			for( int c = 0; c < TheHunter.COLUMNS; c++)
+			for( int c = 0; c < Game.COLUMNS; c++)
 			{
 				if (mapData[r][c] == ObjectTypes.Player.intValue)
 				{
@@ -163,8 +163,6 @@ public class WorldPlayer extends Scene
 		configGame();
 		
 		Player p = (Player)this.getPlayer();
-		// add 4 torches to backpack
-		for (int i = 0; i < 4; i++) p.addToBackpack(new InvTorch(this));
 		
 		Log.println(worldName + " finished. Starting...");
 	}
@@ -200,7 +198,7 @@ public class WorldPlayer extends Scene
 	}
 	
 	private void updateWorld()
-	{
+	{		
 		Vector2 playerMap = this.worldData.getPlayerOnMapRC();
 		
 		if (playerMap == null)
@@ -211,14 +209,14 @@ public class WorldPlayer extends Scene
 		int playerRow = playerMap.y;
 		int playerColumn = playerMap.x;
 		
-		for (int r = 0; r < TheHunter.ROWS; r++)
+		for (int r = 0; r < Game.ROWS; r++)
 		{
-			for (int c = 0; c < TheHunter.COLUMNS; c++)
+			for (int c = 0; c < Game.COLUMNS; c++)
 			{
 				if (playerColumn - WORLD_UPDATE_DISTANCE >= 0 && 
-						playerColumn + WORLD_UPDATE_DISTANCE < TheHunter.COLUMNS &&
+						playerColumn + WORLD_UPDATE_DISTANCE < Game.COLUMNS &&
 						playerRow - WORLD_UPDATE_DISTANCE >= 0 &&
-						playerRow + WORLD_UPDATE_DISTANCE < TheHunter.ROWS)
+						playerRow + WORLD_UPDATE_DISTANCE < Game.ROWS)
 					{
 						this.worldData.updateMap(r, c);
 					}
@@ -237,14 +235,7 @@ public class WorldPlayer extends Scene
 	{
 		if (this.isKeyPressed(KeyEvent.VK_ESCAPE)) 
 		{
-			this.openScene("MainMenu");
-		}
-		
-		if (!this.savingLock && this.isKeyPressed(KeyEvent.VK_U)) 
-		{
-			this.savingLock = true;
-			Player p = (Player)this.getPlayer();
-			WorldStruct.saveEntireWorld("sam-world", this.worldData.getWorldMaps(), p);
+			this.openScene("Sandbox");
 		}
 	}
 	

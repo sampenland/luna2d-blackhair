@@ -8,6 +8,7 @@ import luna2d.ColorHandler;
 import luna2d.Log;
 import luna2d.Scene;
 import luna2d.renderables.TextDisplay;
+import sandbox.scenes.Movement;
 
 public class Sandbox extends Scene
 {
@@ -23,11 +24,10 @@ public class Sandbox extends Scene
 		Color textColor = ColorHandler.getColor("GrassGreen");
 		new TextDisplay(this, "Sandbox for testing the luna2d engine", 200, 150, textColor, 1);
 		
-		new TextDisplay(this, "[C]ollisions", 200, 220, textColor, 1);
-		new TextDisplay(this, "[M]ovement", 200, 240, textColor, 1);
+		new TextDisplay(this, "[M]ovement", 200, 220, textColor, 1);
+		new TextDisplay(this, "[C]ollisions", 200, 240, textColor, 1);
 		
 		new TextDisplay(this, "[Q]uit", 200, 400, textColor, 1);
-		
 		
 	}
 
@@ -41,6 +41,12 @@ public class Sandbox extends Scene
 		if (this.isKeyPressed(KeyEvent.VK_Q))
 		{
 			this.endGame();
+		}
+		
+		if (this.isKeyPressed(KeyEvent.VK_M))
+		{
+			Movement movement = new Movement("Movement");
+			movement.loadAndStart("TheLake-001");
 		}
 	}
 

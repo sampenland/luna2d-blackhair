@@ -15,6 +15,7 @@ import luna2d.WorldStruct;
 
 public abstract class Scene
 {
+	protected WorldStruct worldData;
 	public String name;
 
 	protected WorldPosition worldPosition;
