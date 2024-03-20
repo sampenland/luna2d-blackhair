@@ -7,10 +7,10 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.Timer;
 
-import luna2d.Game;
-import luna2d.Log;
-import luna2d.ResourceHandler;
-import luna2d.Scene;
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.ResourceHandler;
+import luna2d.engine.Scene;
 import luna2d.timers.SpriteTask;
 
 public class Sprite extends Renderable

@@ -1,9 +1,12 @@
-package luna2d;
+package luna2d.maths;
 
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.ThreadLocalRandom;
+
+import luna2d.engine.Game;
 import luna2d.playerControllers.SimplePlayer;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class Maths 
 {

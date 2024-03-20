@@ -1,11 +1,14 @@
-package luna2d;
+package luna2d.templates.worldMapData;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
 import luna2d.renderables.Grid;
-import luna2d.ObjectTypes;
+import luna2d.templates.dataTypes.ObjectTypes;
+import luna2d.engine.ColorHandler;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
 
 public class MapGrounds extends Grid
 {	

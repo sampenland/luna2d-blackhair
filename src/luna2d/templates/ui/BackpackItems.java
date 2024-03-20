@@ -8,14 +8,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 
-import luna2d.Game;
-import luna2d.Log;
-import luna2d.ResourceHandler;
-import luna2d.Scene;
-import luna2d.Utilites;
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.ResourceHandler;
+import luna2d.engine.Scene;
+import luna2d.engine.Utilites;
 import luna2d.ui.UIGrid;
 import luna2d.templates.InventoryItem;
-import luna2d.ObjectTypes;
+import luna2d.templates.dataTypes.ObjectTypes;
 
 public class BackpackItems extends UIGrid
 {

@@ -2,8 +2,9 @@ package sandbox;
 
 import java.awt.Color;
 
-import luna2d.ColorHandler;
-import luna2d.Game;
+import luna2d.engine.ColorHandler;
+import luna2d.engine.Game;
+import sandbox.scenes.Editor;
 import sandbox.scenes.Movement;
 
 public class SandboxEngine extends Game 
@@ -24,10 +25,16 @@ public class SandboxEngine extends Game
 	public static void main(String[] args)
 	{
 		Game g = new Game();
+		g.DATA_DIR = System.getProperty("user.dir") + "/data/";
+		g.GAME_SAVE_DIR = System.getProperty("user.dir") + "/data/saves/";
+		
 		g.init(WIDTH, HEIGHT, "Sandbox", Color.black, "src/sandbox/res/");
 		
 		Sandbox sandbox = new Sandbox("Sandbox");		
 		g.sceneManager.addScene(sandbox);
+		
+		Editor worldEditor = new Editor("Editor");
+		g.sceneManager.addScene(worldEditor);
 		
 		createColors();
 		

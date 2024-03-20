@@ -5,8 +5,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
-import luna2d.Game;
-import luna2d.Scene;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
 import luna2d.ui.UI;
 
 public class FillBar extends UI

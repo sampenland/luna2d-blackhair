@@ -7,9 +7,9 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import luna2d.Game;
-import luna2d.Maths;
-import luna2d.Scene;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
+import luna2d.maths.Maths;
 
 public class UITextInput extends UI 
 {	

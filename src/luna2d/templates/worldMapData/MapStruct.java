@@ -1,10 +1,13 @@
-package luna2d;
+package luna2d.templates.worldMapData;
 
-import luna2d.ColorHandler;
-import luna2d.Game;
-import luna2d.Maths;
-import luna2d.Scene;
-import luna2d.Vector2;
+import luna2d.engine.ColorHandler;
+import luna2d.engine.Game;
+import luna2d.engine.SaveLoadHandler;
+import luna2d.engine.Scene;
+import luna2d.maths.Maths;
+import luna2d.maths.Vector2;
+import luna2d.templates.dataTypes.LoadDataType;
+import luna2d.templates.dataTypes.ObjectTypes;
 
 public class MapStruct 
 {
@@ -33,8 +36,8 @@ public class MapStruct
 		
 		this.worldPosition = new WorldPosition(new Vector2(c, r), new Vector2(0, 0));
 		
-		this.mapData = Game.loadCSVints(mapName, LoadDataType.MAP);
-		this.mapDataGrounds = Game.loadCSVints(mapName, LoadDataType.GROUNDS);
+		this.mapData = SaveLoadHandler.loadCSVints(mapName, LoadDataType.MAP);
+		this.mapDataGrounds = SaveLoadHandler.loadCSVints(mapName, LoadDataType.GROUNDS);
 	}
 	
 	public String getMapName()

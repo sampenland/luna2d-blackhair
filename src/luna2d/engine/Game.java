@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -16,12 +16,16 @@ public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = -2680723036795663013L;
 	
-	public static int ROWS = 0;
-	public static int COLUMNS = 0;
-	public static int CELL_SIZE = 16;
+	public static final int GRIDY_OFFSET = 5;
+	public static final int ROWS = 37;
+	public static final int COLUMNS = 49;
+	public static final int CELL_SIZE = 16;
+	public static final int WORLD_WIDTH = CELL_SIZE * COLUMNS;
+	public static final int WORLD_HEIGHT = CELL_SIZE * ROWS;
 	
-	public static final String DATA_DIR = System.getProperty("user.dir") + "/data/";
-	public static final String GAME_SAVE_DIR = System.getProperty("user.dir") + "/data/saves/";
+	
+	public static String DATA_DIR = System.getProperty("user.dir") + "/data/";
+	public static String GAME_SAVE_DIR = System.getProperty("user.dir") + "/data/saves/";
 	
 	public static final int PLAYER_ID = -99;
 	public static final int DRAW_LAYERS = 50;
@@ -59,6 +63,16 @@ public class Game extends Canvas implements Runnable {
 		
 	public void init(int width, int height, String title, Color bkgColor, String resourceDir)
 	{
+		if (!Utilites.directoryExists(DATA_DIR))
+		{
+			Utilites.createDirectory(DATA_DIR);
+		}
+		
+		if (!Utilites.directoryExists(GAME_SAVE_DIR))
+		{
+			Utilites.createDirectory(GAME_SAVE_DIR);
+		}
+		
 		WIDTH = width;
 		HEIGHT = height;
 		resDir = resourceDir;
@@ -279,121 +293,5 @@ public class Game extends Canvas implements Runnable {
 		
 		stop();
 		
-	}
-	
-	public static int[][] loadCSVints(String name, LoadDataType dataType)
-	{
-		String path = DATA_DIR + "/" + name;
-		
-		switch(dataType)
-		{
-		case GROUNDS:
-			path += ".thmg";
-			break;
-		case MAP:
-			path += ".thm";
-			break;
-		case WORLD:
-			path += ".thw";
-			break;
-		case GAME_MAP:
-			path = name;
-			break;
-		case GAME_GROUNDS:
-			path = name;
-			break;
-		case BACKPACK:
-			path = name;
-			break;
-		default:
-			Log.println(name + " not a game save, world, map, or grounds name.");
-			return null;	
-		}
-		
-		int[][] data = new int[ROWS][COLUMNS];
-		
-		BufferedReader reader;
-		try 
-		{
-			reader = new BufferedReader(new FileReader(path));
-			
-			String line = "";
-			int row = 0;
-			while((line = reader.readLine()) != null)
-			{
-			   String[] cols = line.split(","); 
-			   int col = 0;
-			   for(String  c : cols)
-			   {
-				   int t = Integer.parseInt(c);				   
-				   data[row][col] = t;
-				   col++;
-			   }
-			   
-			   row++;
-			   
-			}
-			
-			reader.close();
-			
-			return data;
-			
-		} 
-		catch (IOException | NumberFormatException e) 
-		{
-			e.printStackTrace();
-		}
-		
-		return data;
-	}
-	
-	public static String[][] loadCSVstrings(String name, LoadDataType dataType)
-	{
-		String path = DATA_DIR + "/" + name;
-		
-		switch(dataType)
-		{
-		case WORLD_NAMES:
-			path += ".thwn";
-			break;
-		default:
-			Log.println(name + " not a world names file.");
-			return null;
-		}
-		
-		String[][] data = new String[ROWS][COLUMNS];
-		
-		BufferedReader reader;
-		try 
-		{
-			reader = new BufferedReader(new FileReader(path));
-			
-			String line = "";
-			int row = 0;
-			while((line = reader.readLine()) != null)
-			{
-			   String[] cols = line.split(","); 
-			   int col = 0;
-			   for(String  c : cols)
-			   {
-				   data[row][col] = c;
-				   col++;
-			   }
-			   
-			   row++;
-			   
-			}
-			
-			reader.close();
-			
-			return data;
-			
-		} 
-		catch (IOException | NumberFormatException e) 
-		{
-			((Throwable) e).printStackTrace();
-		}
-		
-		return data;
 	}
 }

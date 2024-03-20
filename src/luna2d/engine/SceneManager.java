@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;

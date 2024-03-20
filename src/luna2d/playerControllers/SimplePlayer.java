@@ -3,9 +3,10 @@ package luna2d.playerControllers;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import luna2d.Game;
-import luna2d.GameObject;
-import luna2d.Scene;
+
+import luna2d.engine.Game;
+import luna2d.engine.GameObject;
+import luna2d.engine.Scene;
 import luna2d.renderables.Sprite;
 
 public class SimplePlayer extends GameObject

@@ -3,11 +3,11 @@ package luna2d.renderables;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-import luna2d.Game;
-import luna2d.Scene;
-import luna2d.Vector2;
 import luna2d.ui.UIMenu;
-import luna2d.WorldPosition;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
+import luna2d.maths.Vector2;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public abstract class Renderable 
 {

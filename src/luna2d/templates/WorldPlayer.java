@@ -7,18 +7,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import luna2d.DayNightCycleTime;
-import luna2d.Game;
-import luna2d.Log;
-import luna2d.ResourceHandler;
-import luna2d.Scene;
-import luna2d.Utilites;
-import luna2d.Vector2;
-import luna2d.LoadDataType;
-import luna2d.MapStruct;
-import luna2d.ObjectTypes;
-import luna2d.WorldPosition;
-import luna2d.WorldStruct;
+import luna2d.engine.DayNightCycleTime;
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.ResourceHandler;
+import luna2d.engine.SaveLoadHandler;
+import luna2d.engine.Scene;
+import luna2d.engine.Utilites;
+import luna2d.maths.Vector2;
+import luna2d.templates.dataTypes.LoadDataType;
+import luna2d.templates.dataTypes.ObjectTypes;
+import luna2d.templates.worldMapData.MapStruct;
+import luna2d.templates.worldMapData.WorldPosition;
+import luna2d.templates.worldMapData.WorldStruct;
 
 public class WorldPlayer extends Scene
 {
@@ -132,8 +133,8 @@ public class WorldPlayer extends Scene
 		String mapPath = pathBase + "s_" + gameName + "_" + worldRow + "-" +  worldColumn + ".ths";
 		String groundPath = pathBase + "s_" + gameName + "_" + worldRow + "-" +  worldColumn + ".thsg";
 
-		int[][] mapData = Game.loadCSVints(mapPath, LoadDataType.GAME_MAP);
-		int[][] mapGrounds = Game.loadCSVints(groundPath, LoadDataType.GAME_GROUNDS);
+		int[][] mapData = SaveLoadHandler.loadCSVints(mapPath, LoadDataType.GAME_MAP);
+		int[][] mapGrounds = SaveLoadHandler.loadCSVints(groundPath, LoadDataType.GAME_GROUNDS);
 		
 		for (int r = 0; r < Game.ROWS; r++)
 		{

@@ -1,7 +1,8 @@
 package luna2d.timers;
 
 import java.util.TimerTask;
-import luna2d.WeatherSystem;
+
+import luna2d.engine.WeatherSystem;
 
 public class WeatherSystemTask extends TimerTask
 {

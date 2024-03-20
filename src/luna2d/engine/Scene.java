@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Graphics;
 import java.awt.Point;
@@ -9,9 +9,9 @@ import java.util.LinkedList;
 import luna2d.renderables.Renderable;
 import luna2d.renderables.Sprite;
 import luna2d.templates.Player;
+import luna2d.templates.worldMapData.WorldPosition;
+import luna2d.templates.worldMapData.WorldStruct;
 import luna2d.ui.UI;
-import luna2d.WorldPosition;
-import luna2d.WorldStruct;
 
 public abstract class Scene
 {

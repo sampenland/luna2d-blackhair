@@ -3,7 +3,7 @@ package luna2d.ui;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-import luna2d.Scene;
+import luna2d.engine.Scene;
 
 public abstract class UI 
 {

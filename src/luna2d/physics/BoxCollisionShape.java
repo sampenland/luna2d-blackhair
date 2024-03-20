@@ -2,7 +2,7 @@ package luna2d.physics;
 
 import java.awt.Rectangle;
 
-import luna2d.Maths;
+import luna2d.maths.Maths;
 
 public class BoxCollisionShape extends CollisionShape
 {

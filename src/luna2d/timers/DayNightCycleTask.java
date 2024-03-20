@@ -1,7 +1,8 @@
 package luna2d.timers;
 
 import java.util.TimerTask;
-import luna2d.DayNightCycle;
+
+import luna2d.engine.DayNightCycle;
 
 public class DayNightCycleTask extends TimerTask
 {

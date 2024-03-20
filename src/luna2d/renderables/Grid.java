@@ -5,9 +5,10 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
-import luna2d.Game;
-import luna2d.Log;
-import luna2d.Scene;
+
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.Scene;
 
 public class Grid extends Renderable
 {

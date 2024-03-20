@@ -2,7 +2,7 @@ package luna2d.templates;
 
 import java.awt.Color;
 
-import luna2d.DayNightCycle;
+import luna2d.engine.DayNightCycle;
 
 public class DayNightCycleEngine extends DayNightCycle
 {

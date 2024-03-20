@@ -3,8 +3,9 @@ package luna2d.renderables;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
-import luna2d.Scene;
-import luna2d.WorldPosition;
+
+import luna2d.engine.Scene;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class TextDisplay extends Renderable
 {

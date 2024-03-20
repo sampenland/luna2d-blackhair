@@ -4,7 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.LinkedList;
-import luna2d.Scene;
+
+import luna2d.engine.Scene;
 import luna2d.renderables.Renderable;
 import luna2d.renderables.Sprite;
 import luna2d.renderables.TextDisplay;

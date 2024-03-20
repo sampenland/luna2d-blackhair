@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Graphics;
 import java.awt.Point;
@@ -8,13 +8,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 import luna2d.lights.Light;
+import luna2d.maths.Vector2;
 import luna2d.renderables.FadingTextDisplay;
 import luna2d.renderables.Renderable;
 import luna2d.renderables.Sprite;
 import luna2d.ui.UI;
-import luna2d.MapGrounds;
-import luna2d.WorldPosition;
 import luna2d.templates.WorldPlayer;
+import luna2d.templates.worldMapData.MapGrounds;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class ObjectHandler 
 {	

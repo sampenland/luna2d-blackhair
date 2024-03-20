@@ -1,4 +1,6 @@
-package luna2d;
+package luna2d.templates.worldMapData;
+
+import luna2d.maths.Vector2;
 
 public class WorldPosition 
 {

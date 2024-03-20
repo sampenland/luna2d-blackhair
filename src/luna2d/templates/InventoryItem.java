@@ -1,7 +1,7 @@
 package luna2d.templates;
 
-import luna2d.ObjectTypes;
-import luna2d.Scene;
+import luna2d.engine.Scene;
+import luna2d.templates.dataTypes.ObjectTypes;
 
 public abstract class InventoryItem 
 {

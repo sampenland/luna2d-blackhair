@@ -4,13 +4,13 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 
-import luna2d.Game;
-import luna2d.Scene;
 import luna2d.renderables.FadingTextDisplay;
 import luna2d.renderables.TextDisplay;
 import luna2d.ui.UIMenu;
 import luna2d.templates.InventoryItem;
-import luna2d.ObjectTypes;
+import luna2d.templates.dataTypes.ObjectTypes;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
 
 public class Backpack extends UIMenu
 {

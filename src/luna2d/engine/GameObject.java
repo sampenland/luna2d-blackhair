@@ -1,11 +1,11 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.util.HashMap;
 
 import luna2d.renderables.Renderable;
-import luna2d.WorldPosition;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public abstract class GameObject 
 {	

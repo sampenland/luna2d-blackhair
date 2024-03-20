@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-import luna2d.Game;
-import luna2d.Scene;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
 
 public class Rect extends Renderable
 {

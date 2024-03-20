@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.AlphaComposite;
 import java.awt.Graphics;
@@ -9,8 +9,9 @@ import java.util.LinkedList;
 
 import luna2d.lights.GlowLight;
 import luna2d.lights.Light;
+import luna2d.maths.Maths;
 import luna2d.templates.Player;
-import luna2d.WorldPosition;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class LightRenderer extends Thread
 {

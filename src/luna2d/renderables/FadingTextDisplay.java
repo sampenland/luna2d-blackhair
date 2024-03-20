@@ -3,7 +3,7 @@ package luna2d.renderables;
 import java.awt.Color;
 import java.util.Timer;
 
-import luna2d.Scene;
+import luna2d.engine.Scene;
 import luna2d.timers.FadingTextDisplayTask;
 
 public class FadingTextDisplay extends TextDisplay 

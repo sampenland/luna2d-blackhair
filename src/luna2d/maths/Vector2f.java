@@ -1,4 +1,4 @@
-package luna2d;
+package luna2d.maths;
 
 public class Vector2f 
 {

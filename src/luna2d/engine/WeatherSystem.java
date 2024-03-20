@@ -1,8 +1,10 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Timer;
+
+import luna2d.maths.Maths;
 import luna2d.renderables.Sprite;
 import luna2d.timers.WeatherSystemTask;
 

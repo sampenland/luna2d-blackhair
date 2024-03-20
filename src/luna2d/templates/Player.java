@@ -8,18 +8,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import luna2d.Game;
-import luna2d.Log;
-import luna2d.Maths;
-import luna2d.ObjectTypes;
-import luna2d.Scene;
-import luna2d.Vector2;
-import luna2d.WorldPosition;
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.Scene;
+import luna2d.engine.Utilites;
+import luna2d.maths.Maths;
+import luna2d.maths.Vector2;
 import luna2d.playerControllers.SimplePlayer;
 import luna2d.renderables.FillBar;
-import luna2d.Utilites;
 import luna2d.renderables.TextDisplay;
+import luna2d.templates.dataTypes.ObjectTypes;
 import luna2d.templates.ui.Backpack;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class Player extends SimplePlayer
 {

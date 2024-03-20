@@ -7,8 +7,9 @@ import java.awt.RadialGradientPaint;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
-import luna2d.Scene;
-import luna2d.WorldPosition;
+
+import luna2d.engine.Scene;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class GlowLight extends Light
 {	

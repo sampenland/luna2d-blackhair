@@ -1,8 +1,9 @@
-package luna2d;
+package luna2d.engine;
 
 import java.awt.Point;
 
-import luna2d.WorldPosition;
+import luna2d.maths.Vector2;
+import luna2d.templates.worldMapData.WorldPosition;
 
 public class Log 
 {

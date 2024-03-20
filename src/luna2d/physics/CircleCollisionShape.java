@@ -1,6 +1,6 @@
 package luna2d.physics;
 
-import luna2d.Maths;
+import luna2d.maths.Maths;
 
 public class CircleCollisionShape extends CollisionShape
 {

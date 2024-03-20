@@ -6,10 +6,10 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
-import luna2d.Game;
-import luna2d.Scene;
 import luna2d.renderables.Renderable;
-import luna2d.WorldPosition;
+import luna2d.templates.worldMapData.WorldPosition;
+import luna2d.engine.Game;
+import luna2d.engine.Scene;
 
 public class UIGrid extends Renderable
 {

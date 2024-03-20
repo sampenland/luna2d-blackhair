@@ -1,14 +1,18 @@
-package luna2d;
+package luna2d.templates.worldMapData;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import luna2d.Log;
-import luna2d.Scene;
-import luna2d.Utilites;
-import luna2d.Vector2;
+import luna2d.engine.Game;
+import luna2d.engine.Log;
+import luna2d.engine.SaveLoadHandler;
+import luna2d.engine.Scene;
+import luna2d.engine.Utilites;
+import luna2d.maths.Vector2;
 import luna2d.templates.Player;
+import luna2d.templates.dataTypes.LoadDataType;
+import luna2d.templates.dataTypes.ObjectTypes;
 
 public class WorldStruct 
 {
@@ -30,7 +34,7 @@ public class WorldStruct
 		this.worldName = worldName;
 		worldName = "w_" + worldName;		
 		
-		String[][] mapsInWorld = Game.loadCSVstrings(worldName, LoadDataType.WORLD_NAMES);
+		String[][] mapsInWorld = SaveLoadHandler.loadCSVstrings(worldName, LoadDataType.WORLD_NAMES);
 		
 		for (int r = 0; r < Game.ROWS; r++)
 		{
