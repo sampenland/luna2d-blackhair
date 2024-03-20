@@ -26,11 +26,17 @@ public class Game extends Canvas implements Runnable {
 	
 	public static String DATA_DIR = System.getProperty("user.dir") + "/data/";
 	public static String GAME_SAVE_DIR = System.getProperty("user.dir") + "/data/saves/";
+	public static String GAME_RES_DIR = System.getProperty("user.dir") + "/data/res/";
 	
-	public static final int PLAYER_ID = -99;
+	public static final int PLAYER_ID = -99;	
+	public static final int RESOURCE_ACTION_DISTANCE = 50;
+	
+	// -------- LAYERS ----------------------
 	public static final int DRAW_LAYERS = 50;
 	public static final int BOTTOM_DRAW_LAYER = 0;
 	public static final int TOP_DRAW_LAYER = DRAW_LAYERS - 1;
+	public static final int ENVIRONMENT_DRAW_LAYER = 2; 
+	//---------------------------------------
 	
 	private static Rectangle screenBounds;
 	
@@ -57,8 +63,6 @@ public class Game extends Canvas implements Runnable {
 	private String title;
 	private Color bkgColor;
 	
-	public static String resDir; 
-	
 	private TextDisplay lbFramesPerSecond;
 		
 	public void init(int width, int height, String title, Color bkgColor, String resourceDir)
@@ -73,9 +77,13 @@ public class Game extends Canvas implements Runnable {
 			Utilites.createDirectory(GAME_SAVE_DIR);
 		}
 		
+		if (!Utilites.directoryExists(GAME_RES_DIR))
+		{
+			Utilites.createDirectory(GAME_RES_DIR);
+		}
+		
 		WIDTH = width;
 		HEIGHT = height;
-		resDir = resourceDir;
 		
 		this.title = title;
 		this.bkgColor = bkgColor;		

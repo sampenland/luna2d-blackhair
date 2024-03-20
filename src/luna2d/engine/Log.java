@@ -26,6 +26,15 @@ public class Log
 		Log.println(wp);
 	}
 	
+	public static void printStack()
+	{
+		StackTraceElement[] err = new Throwable().getStackTrace();
+		for (int i = 0; i < err.length; i++)
+		{			
+			System.out.println("   -- " + err[i]);
+		}
+	}
+	
 	public static void println(String text)
 	{
 		System.out.println(text);

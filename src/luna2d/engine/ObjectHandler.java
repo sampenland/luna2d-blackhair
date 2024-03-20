@@ -13,7 +13,7 @@ import luna2d.renderables.FadingTextDisplay;
 import luna2d.renderables.Renderable;
 import luna2d.renderables.Sprite;
 import luna2d.ui.UI;
-import luna2d.templates.WorldPlayer;
+import luna2d.templates.SimpleWorldPlayer;
 import luna2d.templates.worldMapData.MapGrounds;
 import luna2d.templates.worldMapData.WorldPosition;
 
@@ -115,7 +115,7 @@ public class ObjectHandler
 			
 			Vector2 distance = WorldPosition.distanceFromWPs(temp.worldPosition, playerWP);
 			
-			if (distance.y < WorldPlayer.WORLD_RENDER_DISTANCE && distance.x < WorldPlayer.WORLD_RENDER_DISTANCE)
+			if (distance.y < SimpleWorldPlayer.WORLD_RENDER_DISTANCE && distance.x < SimpleWorldPlayer.WORLD_RENDER_DISTANCE)
 			{
 				temp.render(g);
 			}			

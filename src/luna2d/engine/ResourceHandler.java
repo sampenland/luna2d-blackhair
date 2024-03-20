@@ -36,7 +36,7 @@ public class ResourceHandler
 			return images.get(name);
 		}
 		
-		path = Game.resDir + path;
+		path = Game.GAME_RES_DIR + path;
 		
 		BufferedImage img = null;
 		try 
@@ -46,6 +46,7 @@ public class ResourceHandler
 		catch (IOException e) 
 		{
 			Log.println("Load err: " + e.toString() + "  " + name);
+			Log.printStack();
 			return null;
 		}
 		
@@ -75,6 +76,7 @@ public class ResourceHandler
 		catch (IOException e) 
 		{
 			Log.println("Load err: " + e.toString());
+			Log.printStack();
 			return null;
 		}
 		

@@ -97,8 +97,7 @@ public class MapStruct
 					
 				case Bush:
 					break;
-				case GrowingBerryBush:
-					break;
+				
 				case GndDirt:
 					break;
 					
@@ -124,18 +123,7 @@ public class MapStruct
 					
 				case Water:
 					break;
-					
-				case Wolf:
-					break;
-				case InvBerries:
-					break;
-				case InvRock:
-					break;
 				case Rock:
-					break;
-				case Fire:
-					break;
-				case Torch:
 					break;
 				default:
 					break;

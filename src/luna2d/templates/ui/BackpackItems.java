@@ -76,20 +76,22 @@ public class BackpackItems extends UIGrid
 		ObjectTypes type = ObjectTypes.values()[Integer.parseInt(item[0])];
 		int qty = Integer.parseInt(item[1]);
 		
-		switch(type)
-		{
-		case Empty:
-			return null;
-		case InvBerries:
-		case InvFence:
-		case InvFire:
-		case InvRock:
-		case InvTorch:
-		default:
-			Log.println("NOT A INVENTORY ITEM");
-			return null;
+//		switch(type)
+//		{
+//		case Empty:
+//			return null;
+//		case InvBerries:
+//		case InvFence:
+//		case InvFire:
+//		case InvRock:
+//		case InvTorch:
+//		default:
+//			Log.println("NOT A INVENTORY ITEM");
+//			return null;
+//		
+//		}
 		
-		}
+		return null;
 	}
 	
 	public boolean save(String worldName)

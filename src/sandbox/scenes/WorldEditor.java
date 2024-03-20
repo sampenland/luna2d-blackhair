@@ -2,12 +2,12 @@ package sandbox.scenes;
 
 import java.awt.event.KeyEvent;
 
-import luna2d.templates.WorldEditor;
+import luna2d.templates.SimpleWorldEditor;
 
-public class Editor extends WorldEditor
+public class WorldEditor extends SimpleWorldEditor
 {
 
-	public Editor(String name) 
+	public WorldEditor(String name) 
 	{
 		super(name);
 	}

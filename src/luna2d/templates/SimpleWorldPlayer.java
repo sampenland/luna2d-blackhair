@@ -21,14 +21,14 @@ import luna2d.templates.worldMapData.MapStruct;
 import luna2d.templates.worldMapData.WorldPosition;
 import luna2d.templates.worldMapData.WorldStruct;
 
-public class WorldPlayer extends Scene
+public class SimpleWorldPlayer extends Scene
 {
 	public static final int WORLD_RENDER_DISTANCE = 1;
 	public static final int WORLD_UPDATE_DISTANCE = 2;
 	
 	private boolean savingLock;
 	
-	public WorldPlayer(String name) 
+	public SimpleWorldPlayer(String name) 
 	{
 		super(name);
 	}

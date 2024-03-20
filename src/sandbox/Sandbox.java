@@ -8,7 +8,7 @@ import luna2d.engine.ColorHandler;
 import luna2d.engine.Log;
 import luna2d.engine.Scene;
 import luna2d.renderables.TextDisplay;
-import sandbox.scenes.Movement;
+import sandbox.scenes.WorldPlayer;
 
 public class Sandbox extends Scene
 {
@@ -23,11 +23,12 @@ public class Sandbox extends Scene
 		
 		Color textColor = ColorHandler.getColor("GrassGreen");
 		new TextDisplay(this, "Sandbox for testing the luna2d engine", 200, 150, textColor, 1);
+
+		new TextDisplay(this, "[W] World Editor", 200, 200, textColor, 1);
+		new TextDisplay(this, "[M] Map Editor", 200, 220, textColor, 1);
 		
-		new TextDisplay(this, "[E]ditor", 200, 180, textColor, 1);
-		
-		new TextDisplay(this, "[M]ovement", 200, 220, textColor, 1);
-		new TextDisplay(this, "[C]ollisions", 200, 240, textColor, 1);
+		new TextDisplay(this, "[1] Test Movement", 200, 280, textColor, 1);
+		new TextDisplay(this, "[2] Test Collisions", 200, 300, textColor, 1);
 		
 		new TextDisplay(this, "[Q]uit", 200, 400, textColor, 1);
 		
@@ -46,16 +47,22 @@ public class Sandbox extends Scene
 			return;
 		}
 		
-		if (this.isKeyPressed(KeyEvent.VK_M))
+		if (this.isKeyPressed(KeyEvent.VK_1))
 		{
-			Movement movement = new Movement("Movement");
-			movement.loadAndStart("TheLake-001");
+			WorldPlayer movement = new WorldPlayer("Movement");
+			movement.loadAndStart("WORLD00");
 			return;
 		}
 		
-		if (this.isKeyPressed(KeyEvent.VK_E))
+		if (this.isKeyPressed(KeyEvent.VK_W))
 		{
-			this.openScene("Editor");
+			this.openScene("WorldEditor");
+			return;
+		}
+		
+		if (this.isKeyPressed(KeyEvent.VK_M))
+		{
+			this.openScene("MapEditor");
 			return;
 		}
 	}

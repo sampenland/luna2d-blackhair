@@ -83,19 +83,11 @@ public class Backpack extends UIMenu
 			break;
 		case GndWater:
 			break;
-		case InvBerries:
-			this.showLog("Added " + item.AMOUNT + " berries", Color.green);
-			break;
 		case Player:
 			break;
 		case Tree:
 			break;
 		case Water:
-			break;
-		case Wolf:
-			break;
-		case InvRock:
-			this.showLog("Added " + item.AMOUNT + " rocks", Color.green);
 			break;
 		case Rock:
 			break;
@@ -151,31 +143,13 @@ public class Backpack extends UIMenu
 				break;
 			case GndWater:
 				break;
-			case InvBerries:
-				this.showLog("Removed " + item.AMOUNT + " berries", Color.red);
-				break;
 			case Player:
 				break;
 			case Tree:
 				break;
 			case Water:
 				break;
-			case Wolf:
-				break;
-			case InvRock:
-				this.showLog("Removed " + item.AMOUNT + " rocks", Color.red);
-				break;
 			case Rock:
-				break;
-			case FenceHorz:
-				break;
-			case FenceVert:
-				break;
-			case Fire:
-				break;
-			case InvFence:
-				break;
-			case ThrownRock:
 				break;
 			default:
 				break;

@@ -13,11 +13,11 @@ import luna2d.engine.Scene;
 import luna2d.renderables.TextDisplay;
 import luna2d.ui.UIButton;
 import luna2d.ui.UITextInput;
-import luna2d.templates.ui.WorldEditorMenu;
+import luna2d.templates.ui.SimpleWorldEditorMenu;
 import luna2d.templates.worldMapData.MapGrounds;
 import luna2d.templates.dataTypes.ObjectTypes;
 
-public class WorldEditor extends Scene
+public class SimpleWorldEditor extends Scene
 {
 
 	private MapGrounds grounds;
@@ -28,9 +28,9 @@ public class WorldEditor extends Scene
 	private UIButton mapNameSaveButton, mapNamesCloseButton;
 	private int nameRow, nameColumn;
 	
-	public WorldEditorMenu detailedMenu;
+	public SimpleWorldEditorMenu detailedMenu;
 	
-	public WorldEditor(String name) 
+	public SimpleWorldEditor(String name) 
 	{
 		super(name);
 		this.setMouseEnabled(true);
@@ -183,6 +183,8 @@ public class WorldEditor extends Scene
 		new TextDisplay(this, "Left Click to place map. Right click to name it.", Game.WIDTH / 2 - 150, 
 				Game.HEIGHT - 60, Color.white, Game.TOP_DRAW_LAYER);
 		
+		new TextDisplay(this, "[M] for menu", Game.WIDTH / 2 - 150, Game.HEIGHT - 80, Color.white, Game.TOP_DRAW_LAYER);
+		
 		mapNameInput = new UITextInput(this, "MAP00", 0, 0, 100, 20, 8);
 		mapNameInput.inputEnabled = true;
 		mapNameInput.setColor(Color.white, Color.black, Color.yellow);
@@ -196,7 +198,7 @@ public class WorldEditor extends Scene
 		mapNamesCloseButton.setColors(Color.white, Color.black);
 		mapNamesCloseButton.visible = false;
 		
-		this.detailedMenu = new WorldEditorMenu(this, Game.WIDTH / 2 - 150, Game.HEIGHT / 2 - 100, 300, 200, new Color(1, 1, 1, 0.45f), 1);
+		this.detailedMenu = new SimpleWorldEditorMenu(this, Game.WIDTH / 2 - 150, Game.HEIGHT / 2 - 100, 300, 200, new Color(1, 1, 1, 0.45f), 1);
 		
 	}
 

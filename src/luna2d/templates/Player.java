@@ -204,29 +204,13 @@ public class Player extends SimplePlayer
 			break;
 		case GndWater:
 			break;
-		case InvBerries:
-			break;
 		case Player:
 			break;
 		case Tree:
 			break;
 		case Water:
 			break;
-		case Wolf:
-			break;
-		case FenceHorz:
-			break;
-		case FenceVert:
-			break;
-		case Fire:
-			break;
-		case InvFence:
-			break;
-		case InvRock:
-			break;
 		case Rock:
-			break;
-		case ThrownRock:
 			break;
 		default:
 			break;
@@ -244,12 +228,6 @@ public class Player extends SimplePlayer
 			break;
 		case Empty:
 			break;
-		case FenceHorz:
-			break;
-		case FenceVert:
-			break;
-		case Fire:
-			break;
 		case GndDirt:
 			break;
 		case GndGrass:
@@ -258,26 +236,13 @@ public class Player extends SimplePlayer
 			break;
 		case GndWater:
 			break;
-		case InvBerries:
-			break;
-		case InvFence:
-			break;
-		case InvFire:
-			break;
-		case InvTorch:
-		case InvRock:
-			break;
 		case Player:
 			break;
 		case Rock:
 			break;
-		case ThrownRock:
-			break;
 		case Tree:
 			break;
 		case Water:
-			break;
-		case Wolf:
 			break;
 		default:
 			break;
@@ -309,17 +274,11 @@ public class Player extends SimplePlayer
 			break;
 		case GndWater:
 			break;
-		case InvBerries:
-			break;
 		case Player:
 			break;
 		case Tree:
 			break;
 		case Water:
-			break;
-		case Wolf:
-			break;
-		case InvRock:
 			break;
 		case Rock:
 			break;

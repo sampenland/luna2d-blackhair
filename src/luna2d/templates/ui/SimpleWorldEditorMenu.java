@@ -14,9 +14,9 @@ import luna2d.ui.UIButton;
 import luna2d.ui.UIMenu;
 import luna2d.ui.UITextInput;
 import luna2d.templates.dataTypes.LoadDataType;
-import luna2d.templates.WorldEditor;
+import luna2d.templates.SimpleWorldEditor;
 
-public class WorldEditorMenu extends UIMenu
+public class SimpleWorldEditorMenu extends UIMenu
 {
 
 	private boolean saving;
@@ -25,7 +25,7 @@ public class WorldEditorMenu extends UIMenu
 	private UITextInput worldNameInput, worldNameLoadInput;
 	private UIButton saveButton, loadButton, closeButton;
 	
-	public WorldEditorMenu(Scene inScene, int x, int y, int width, int height, Color bkgColor, int scale) 
+	public SimpleWorldEditorMenu(Scene inScene, int x, int y, int width, int height, Color bkgColor, int scale) 
 	{
 		super(inScene, x, y, width, height, bkgColor, scale);
 		
@@ -155,7 +155,7 @@ public class WorldEditorMenu extends UIMenu
 	{
 		if (this.closeButton.mouseClicked)
 		{
-			WorldEditor me = (WorldEditor)this.inScene;
+			SimpleWorldEditor me = (SimpleWorldEditor)this.inScene;
 			me.closeMenu();
 			return;
 		}
@@ -163,7 +163,7 @@ public class WorldEditorMenu extends UIMenu
 		{
 			this.saving = true;
 			
-			WorldEditor me = (WorldEditor)this.inScene;
+			SimpleWorldEditor me = (SimpleWorldEditor)this.inScene;
 			me.saveMap("w_" + this.worldNameInput.getText());
 			
 			FadingTextDisplay saveStatusDisplay = new FadingTextDisplay(inScene, "World Saved", this.screenX + 10, this.screenY + this.getHeight() - 15, Color.GREEN, 2000, Game.TOP_DRAW_LAYER);
@@ -175,7 +175,7 @@ public class WorldEditorMenu extends UIMenu
 				@Override
 				public void run()
 				{
-					WorldEditor mapEditor = (WorldEditor)this.scene;
+					SimpleWorldEditor mapEditor = (SimpleWorldEditor)this.scene;
 					mapEditor.detailedMenu.focusedTextInput.setFocus(false);
 					mapEditor.detailedMenu.focusedTextInput = null;
 					mapEditor.detailedMenu.saving = false;
@@ -191,7 +191,7 @@ public class WorldEditorMenu extends UIMenu
 		{
 			this.loading = true;
 			
-			WorldEditor me = (WorldEditor)this.getScene();
+			SimpleWorldEditor me = (SimpleWorldEditor)this.getScene();
 			int[][] maps = SaveLoadHandler.loadCSVints(("w_" + this.worldNameLoadInput.getText()), LoadDataType.WORLD);
 			String[][] mapNames = SaveLoadHandler.loadCSVstrings(("w_" + this.worldNameLoadInput.getText()), LoadDataType.WORLD_NAMES);
 			
@@ -208,7 +208,7 @@ public class WorldEditorMenu extends UIMenu
 				@Override
 				public void run()
 				{
-					WorldEditor worldEditor = (WorldEditor)this.scene;
+					SimpleWorldEditor worldEditor = (SimpleWorldEditor)this.scene;
 					worldEditor.detailedMenu.focusedTextInput.setFocus(false);
 					worldEditor.detailedMenu.focusedTextInput = null;
 					worldEditor.detailedMenu.loading = false;
@@ -230,7 +230,7 @@ public class WorldEditorMenu extends UIMenu
 		}
 		else if (this.worldNameInput.mouseClicked)
 		{
-			WorldEditor worldEditor = (WorldEditor)this.inScene;
+			SimpleWorldEditor worldEditor = (SimpleWorldEditor)this.inScene;
 			
 			worldEditor.detailedMenu.focusedTextInput.setFocus(false);
 			worldEditor.detailedMenu.focusedTextInput = this.worldNameInput;
@@ -240,7 +240,7 @@ public class WorldEditorMenu extends UIMenu
 		}
 		else if (this.worldNameLoadInput.mouseClicked)
 		{
-			WorldEditor mapEditor = (WorldEditor)this.inScene;
+			SimpleWorldEditor mapEditor = (SimpleWorldEditor)this.inScene;
 			
 			mapEditor.detailedMenu.focusedTextInput.setFocus(false);
 			mapEditor.detailedMenu.focusedTextInput = this.worldNameLoadInput;

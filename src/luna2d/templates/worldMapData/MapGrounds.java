@@ -185,8 +185,6 @@ public class MapGrounds extends Grid
 					break;
 				case Water:
 					break;
-				case Wolf:
-					break;
 				default:
 					break;
 				
