@@ -64,9 +64,15 @@ public class Game extends Canvas implements Runnable {
 	private Color bkgColor;
 	
 	private TextDisplay lbFramesPerSecond;
+	
+	private static Game instance;
+	
+	public static Game getInstance() { return instance; }
 		
 	public void init(int width, int height, String title, Color bkgColor, String resourceDir)
 	{
+		Game.instance = this;
+		
 		if (!Utilites.directoryExists(DATA_DIR))
 		{
 			Utilites.createDirectory(DATA_DIR);

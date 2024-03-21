@@ -6,6 +6,7 @@ import luna2d.engine.SaveLoadHandler;
 import luna2d.engine.Scene;
 import luna2d.maths.Maths;
 import luna2d.maths.Vector2;
+import luna2d.templates.Player;
 import luna2d.templates.dataTypes.LoadDataType;
 import luna2d.templates.dataTypes.ObjectTypes;
 
@@ -111,11 +112,11 @@ public class MapStruct
 					break;
 					
 				case Player:
-//					Player p = new Player(this.inScene, "Player", 0, 0, 1, 16, 4, 250);
-//					x = x - Game.WIDTH / 2 + (Game.CELL_SIZE * Game.CAMERA_SCALE) + (Game.CELL_SIZE * MAP_SCALE / 2);
-//					y = y - Game.HEIGHT / 2 + (Game.CELL_SIZE * Game.CAMERA_SCALE) + (Game.CELL_SIZE * MAP_SCALE / 2);
-//					p.updateWorldPosition(x, y);
-//					p.updateWorldPosition(thisWorldPosition);
+					Player p = new Player(this.inScene, "Player", 0, 0, 1, 16, 4, 250);
+					x = x - Game.WIDTH / 2 + (Game.CELL_SIZE * Game.CAMERA_SCALE) + (Game.CELL_SIZE * MAP_SCALE / 2);
+					y = y - Game.HEIGHT / 2 + (Game.CELL_SIZE * Game.CAMERA_SCALE) + (Game.CELL_SIZE * MAP_SCALE / 2);
+					p.updateWorldPosition(x, y);
+					p.updateWorldPosition(thisWorldPosition);
 					break;
 					
 				case Tree:

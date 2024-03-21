@@ -214,7 +214,8 @@ public abstract class Scene
 	{
 		if (this.game == null)
 		{
-			Log.println("No game to end");
+			Log.println("No game");
+			Log.printStack();
 			return null;
 		}
 		

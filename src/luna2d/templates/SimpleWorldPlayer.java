@@ -21,7 +21,7 @@ import luna2d.templates.worldMapData.MapStruct;
 import luna2d.templates.worldMapData.WorldPosition;
 import luna2d.templates.worldMapData.WorldStruct;
 
-public class SimpleWorldPlayer extends Scene
+public abstract class SimpleWorldPlayer extends Scene
 {
 	public static final int WORLD_RENDER_DISTANCE = 1;
 	public static final int WORLD_UPDATE_DISTANCE = 2;
@@ -165,6 +165,13 @@ public class SimpleWorldPlayer extends Scene
 		
 		Player p = (Player)this.getPlayer();
 		
+		if (p == null)
+		{
+			Log.println("Player is null...");
+			Log.printStack();
+			return;
+		}
+		
 		Log.println(worldName + " finished. Starting...");
 	}
 
@@ -177,11 +184,11 @@ public class SimpleWorldPlayer extends Scene
 		this.setDayNightCycle(new DayNightCycleEngine(80, 8, 20, Color.orange, Color.white, Color.orange, 
 				new Color(0, 0, 0, 0.8f)), new DayNightCycleTime(8, 0, 0));
 		
-		ResourceHandler.addRain("Rain", "RainComing", 800, 10, 50, 
-				4 * 60, 3 * 24 * 60, // 4 hrs - 3 days between rain
-				60, 2 * 24 * 60, // 1 hours - 2 days of rain
-				this.getDayNightEngine().getMilliSecondsOfInGameMinute() / 2
-				);
+//		ResourceHandler.addRain("Rain", "RainComing", 800, 10, 50, 
+//				4 * 60, 3 * 24 * 60, // 4 hrs - 3 days between rain
+//				60, 2 * 24 * 60, // 1 hours - 2 days of rain
+//				this.getDayNightEngine().getMilliSecondsOfInGameMinute() / 2
+//				);
 	}
 	
 	@Override
@@ -232,13 +239,7 @@ public class SimpleWorldPlayer extends Scene
 		this.checkKeys();
 	}
 
-	private void checkKeys()
-	{
-		if (this.isKeyPressed(KeyEvent.VK_ESCAPE)) 
-		{
-			this.openScene("Sandbox");
-		}
-	}
+	protected abstract void checkKeys();
 	
 	@Override
 	public void onMouseClick(MouseEvent e) 

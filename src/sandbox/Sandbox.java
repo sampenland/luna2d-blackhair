@@ -49,8 +49,8 @@ public class Sandbox extends Scene
 		
 		if (this.isKeyPressed(KeyEvent.VK_1))
 		{
-			WorldPlayer movement = new WorldPlayer("Movement");
-			movement.loadAndStart("WORLD00");
+			WorldPlayer worldPlayer = (WorldPlayer)this.openScene("WorldPlayer");
+			worldPlayer.loadAndStart("WORLD00");
 			return;
 		}
 		

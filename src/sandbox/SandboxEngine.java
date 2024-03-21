@@ -42,6 +42,9 @@ public class SandboxEngine extends Game
 		MapEditor mapEditor = new MapEditor("MapEditor");
 		g.sceneManager.addScene(mapEditor);
 		
+		WorldPlayer worldPlayer = new WorldPlayer("WorldPlayer");
+		g.sceneManager.addScene(worldPlayer);
+		
 		loadImages();
 		createColors();
 		
